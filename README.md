@@ -1,2 +1,14 @@
-# rn-design
-关于RN的一些自定义组件封装
+RN 自定义组件
+
+Import this module:
+
+```
+import { Radio, Toast } from "@/rn-design";
+```
+
+Usage
+
+```
+<Radio ... />
+Toast.show("这是测试",1500)
+```

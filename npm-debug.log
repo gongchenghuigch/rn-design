@@ -1,0 +1,103 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/a58/.nvm/versions/node/v7.6.0/bin/node',
+1 verbose cli   '/Users/a58/.nvm/versions/node/v7.6.0/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@4.1.2
+3 info using node@v7.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/a58/Desktop/work/代码备份/RN Task/cstTask/rn-design',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/a58/.npm/rn-design/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+10 info lifecycle rn-design@1.0.0~prepublish: rn-design@1.0.0
+11 silly lifecycle rn-design@1.0.0~prepublish: no script for prepublish, continuing
+12 info lifecycle rn-design@1.0.0~prepare: rn-design@1.0.0
+13 silly lifecycle rn-design@1.0.0~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/a58/.npm/rn-design/1.0.0/package.tgz',
+14 verbose tar pack   '/Users/a58/Desktop/work/代码备份/RN Task/cstTask/rn-design' ]
+15 verbose tarball /Users/a58/.npm/rn-design/1.0.0/package.tgz
+16 verbose folder /Users/a58/Desktop/work/代码备份/RN Task/cstTask/rn-design
+17 verbose addLocalTarball adding from inside cache /Users/a58/.npm/rn-design/1.0.0/package.tgz
+18 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd rn-design@1.0.0
+20 verbose afterAdd /Users/a58/.npm/rn-design/1.0.0/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/a58/.npm/rn-design/1.0.0/package/package.json written
+23 silly publish { name: 'rn-design',
+23 silly publish   version: '1.0.0',
+23 silly publish   description: '关于一些自定义RN组件的封装',
+23 silly publish   main: 'index.js',
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   repository:
+23 silly publish    { type: 'git',
+23 silly publish      url: 'git@gitlab.58corp.com:cst-rn/rn-design.git' },
+23 silly publish   author: { name: '龚成辉' },
+23 silly publish   license: 'ISC',
+23 silly publish   readme: 'RN 自定义组件\n\nImport this module:\n\n```\nimport { Radio, Toast } from "@/rn-design";\n```\n\nUsage\n\n```\n<Radio ... />\nToast.show("这是测试",1500)\n```',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: '6c624cf6c4e9b0153f454e27bffe73f8453aea7c',
+23 silly publish   _id: 'rn-design@1.0.0',
+23 silly publish   _shasum: 'bea627f88d1857deac4f7ca4961d0a443789e3e8',
+23 silly publish   _from: '.' }
+24 info lifecycle rn-design@1.0.0~prepublishOnly: rn-design@1.0.0
+25 silly lifecycle rn-design@1.0.0~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name rn-design
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry https://registry.npm.taobao.org/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'rn-design',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'rn-design',
+30 silly mapToRegistry   name: 'rn-design',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri https://registry.npm.taobao.org/rn-design
+32 verbose publish registryBase https://registry.npm.taobao.org/
+33 silly publish uploading /Users/a58/.npm/rn-design/1.0.0/package.tgz
+34 verbose request uri https://registry.npm.taobao.org/rn-design
+35 verbose request sending authorization for write operation
+36 info attempt registry request try #1 at 10:56:59
+37 verbose request id 2b64dafc9ad16089
+38 http request PUT https://registry.npm.taobao.org/rn-design
+39 http 403 https://registry.npm.taobao.org/rn-design
+40 verbose headers { date: 'Thu, 26 Jul 2018 02:57:00 GMT',
+40 verbose headers   'content-type': 'application/json; charset=utf-8',
+40 verbose headers   'transfer-encoding': 'chunked',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-current-requests': '1',
+40 verbose headers   'x-readtime': '4',
+40 verbose headers   'content-encoding': 'gzip' }
+41 verbose request invalidating /Users/a58/.npm/registry.npm.taobao.org/rn-design on PUT
+42 error publish Failed PUT 403
+43 verbose stack Error: no_perms Private mode enable, only admin can publish this module: rn-design
+43 verbose stack     at makeError (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:304:12)
+43 verbose stack     at CachingRegistryClient.<anonymous> (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:292:14)
+43 verbose stack     at /Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:218:7
+43 verbose stack     at Gunzip.onEnd (zlib.js:213:5)
+43 verbose stack     at emitNone (events.js:91:20)
+43 verbose stack     at Gunzip.emit (events.js:186:7)
+43 verbose stack     at endReadableNT (_stream_readable.js:974:12)
+43 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:74:11)
+43 verbose stack     at process._tickCallback (internal/process/next_tick.js:98:9)
+44 verbose statusCode 403
+45 verbose pkgid rn-design
+46 verbose cwd /Users/a58/Desktop/work/代码备份/RN Task/cstTask/rn-design
+47 error Darwin 17.6.0
+48 error argv "/Users/a58/.nvm/versions/node/v7.6.0/bin/node" "/Users/a58/.nvm/versions/node/v7.6.0/bin/npm" "publish"
+49 error node v7.6.0
+50 error npm  v4.1.2
+51 error code E403
+52 error no_perms Private mode enable, only admin can publish this module: rn-design
+53 error If you need help, you may report this error at:
+53 error     <https://github.com/npm/npm/issues>
+54 verbose exit [ 1, true ]
