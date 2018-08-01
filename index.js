@@ -5,3 +5,5 @@
  */
 export { default as Radio } from "./radio/index";
 export { default as Toast } from "./toast/index";
+export { default as CheckBox } from "./checkBox/index";
+export { default as DatePicker } from "./datePicker/index";

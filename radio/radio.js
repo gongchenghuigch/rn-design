@@ -101,9 +101,7 @@ class Radio extends Component {
     }
     render() {
         let imgUrl = this.props.hightlight
-            ? this.props.seledImg || {
-                  uri: "https://img.58cdn.com.cn/images/car/activitypic/reactnative/selted.png"
-              }
+            ? this.props.seledImg || require("./imgs/selted.png")
             : this.props.selImg || require("./imgs/selt.png");
         let imgUrlNone = this.props.selnoneImg || require("./imgs/seltnone.png");
         return (
