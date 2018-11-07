@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 import { formatFn, getDefaultDate } from "./utils";
-import zhCn from "./rmc-date-picker/lib/locale/zh_CN";
-import enUs from "./rmc-date-picker/lib/locale/en_US";
-import PopPicker from "./rmc-date-picker/lib/Popup";
-import MDatePicker from "./rmc-date-picker/lib/DatePicker";
-import popupStyles from "./rmc-picker/lib/PopupStyles";
+import zhCn from "./../rmc-date-picker/lib/locale/zh_CN";
+import enUs from "./../rmc-date-picker/lib/locale/en_US";
+import PopPicker from "./../rmc-date-picker/lib/Popup";
+import MDatePicker from "./../rmc-date-picker/lib/DatePicker";
+import popupStyles from "./../rmc-picker/lib/PopupStyles";
 // DatePicker style 样式模板
 const pickerStyles = StyleSheet.create({
     modal: {
@@ -38,6 +38,7 @@ const pickerStyles = StyleSheet.create({
         textAlign: "center"
     }
 });
+
 export default class DatePicker extends React.Component {
     static defaultProps = {
         mode: "date",
@@ -45,7 +46,8 @@ export default class DatePicker extends React.Component {
         styles: pickerStyles,
         minuteStep: popupStyles,
         okText: "确定",
-        dismissText: "取消"
+        dismissText: "取消",
+        itemStyle: { color: "#333" }
     };
 
     render() {
@@ -53,6 +55,7 @@ export default class DatePicker extends React.Component {
             children,
             extra,
             styles,
+            itemStyle,
             minuteStep,
             locale,
             mode,
@@ -73,6 +76,7 @@ export default class DatePicker extends React.Component {
                 maxDate={maxDate}
                 defaultDate={value || getDefaultDate(this.props)}
                 onValueChange={onValueChange}
+                itemStyle={itemStyle}
             />
         );
 

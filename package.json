@@ -8,8 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gongchenghuigch/rn-design.git"
+    "url": "git@igit.58corp.com:cst-rn/rn-design.git"
   },
-  "author": "龚成辉",
-  "license": "ISC"
+  "author": "龚成辉"
 }

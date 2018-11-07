@@ -4,11 +4,11 @@ import { Radio } from "@/rn-design";
 const RadioButton = Radio.Button;
 const styles = StyleSheet.create({
     content: {
-        flexDirection: "row",
-        alignItems: "center",
+        // flexDirection: "row",
+        // alignItems: "center",
         paddingHorizontal: 15,
-        backgroundColor: "#fff",
-        justifyContent: "space-between"
+        backgroundColor: "#fff"
+        // justifyContent: "space-between"
     },
     radioContent: {
         flexDirection: "row",
@@ -23,38 +23,37 @@ export default class DemoTest extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            radioData: [
-                { text: "商家评分", value: "1", disabled: false },
-                { text: "个人评分", value: "2", disabled: false }
+            radioBtn: [
+                { text: "不限", value: "0" },
+                { text: "1万公里内", value: "0_1" },
+                { text: "3万公里内", value: "0_3" },
+                { text: "5万公里内", value: "0_5" },
+                { text: "8万公里内", value: "0_8" }
             ],
-            selected: 2
+            selected: "0_1"
         };
     }
 
     componentDidMount() {}
 
     render() {
-        // console.log(RadioButton);
         return (
             <View>
                 <View style={styles.content}>
-                    <View>
+                    <View style={{ height: 45, justifyContent: "center" }}>
                         <Text>测试Radio</Text>
                     </View>
-                    <Radio
-                        style={styles.radioContent}
-                        dataOption={this.state.radioData}
-                        options={{ value: "value", text: "content", disabled: "disabled" }}
+                    <RadioButton
+                        dataOption={this.state.radioBtn}
+                        options={{ value: "value", text: "text", disabled: "disabled" }}
                         selectedValue={this.state.selected}
-                        disabledAll={false}
-                        innerStyle={styles.innerStyle}
                         onChange={(item) => {
                             // console.log(item);
                         }}
-                        // txtColor="#ff552e"
+                        size={[78, 37]}
+                        // seledImg={require("./../img/filter/9@3x.png")}
                     />
                 </View>
-                {/* <RadioButton /> */}
             </View>
         );
     }

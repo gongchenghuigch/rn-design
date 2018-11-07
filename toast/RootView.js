@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 class RootView extends Component {
     constructor(props) {
         super(props);
-        console.log("constructor:setToast");
+        // console.log("constructor:setToast");
         viewRoot = this;
         this.state = {
             toast: null
@@ -28,7 +28,7 @@ class RootView extends Component {
     }
 
     render() {
-        console.log("RootView");
+        // console.log("RootView");
         return (
             <View style={styles.rootView} pointerEvents="box-none">
                 {this.state.toast}

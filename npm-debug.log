@@ -1,0 +1,86 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/a58/.nvm/versions/node/v7.6.0/bin/node',
+1 verbose cli   '/Users/a58/.nvm/versions/node/v7.6.0/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--registry',
+1 verbose cli   'http://ires.58corp.com/repository/npm/' ]
+2 info using npm@4.1.2
+3 info using node@v7.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/a58/Desktop/work/RNproject/rn-design',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/a58/.npm/rn-design/1.0.0/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+10 info lifecycle rn-design@1.0.0~prepublish: rn-design@1.0.0
+11 silly lifecycle rn-design@1.0.0~prepublish: no script for prepublish, continuing
+12 info lifecycle rn-design@1.0.0~prepare: rn-design@1.0.0
+13 silly lifecycle rn-design@1.0.0~prepare: no script for prepare, continuing
+14 verbose tar pack [ '/Users/a58/.npm/rn-design/1.0.0/package.tgz',
+14 verbose tar pack   '/Users/a58/Desktop/work/RNproject/rn-design' ]
+15 verbose tarball /Users/a58/.npm/rn-design/1.0.0/package.tgz
+16 verbose folder /Users/a58/Desktop/work/RNproject/rn-design
+17 verbose addLocalTarball adding from inside cache /Users/a58/.npm/rn-design/1.0.0/package.tgz
+18 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+19 silly cache afterAdd rn-design@1.0.0
+20 verbose afterAdd /Users/a58/.npm/rn-design/1.0.0/package/package.json not in flight; writing
+21 verbose correctMkdir /Users/a58/.npm correctMkdir not in flight; initializing
+22 verbose afterAdd /Users/a58/.npm/rn-design/1.0.0/package/package.json written
+23 silly publish { name: 'rn-design',
+23 silly publish   version: '1.0.0',
+23 silly publish   description: '关于一些自定义RN组件的封装',
+23 silly publish   main: 'index.js',
+23 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+23 silly publish   repository: { type: 'git', url: 'git@igit.58corp.com:cst-rn/rn-design.git' },
+23 silly publish   author: { name: '龚成辉' },
+23 silly publish   license: 'ISC',
+23 silly publish   readme: '# 新项目\n克隆完种子工程之后需要\n```\n//下载依赖包\n$ npm install && git submodule init && git submodule update\n```\n此时项目中会有两个中间层\n\n- rn-app:中间协议层，封装的都是和native交互的中间协议层\n- rn-design：自定义RN组件，为了代码解耦就没有放在中间层rn-app中\n  \n\n这两个中间层都是和你的项目开发目录是平级的\n  \n关于组件的具体使用方法 [详见开发文档](http://c.58corp.com/pages/viewpage.action?pageId=20775138)\n\n\n由于RN官网并没有提供Radio单选组件，所以需要自己封装通用的单选组件\n\n\n# 传值方式\n\n```\n1、使用  dataOption={datas}  属性传值  必填属性\ndatas数据示例：\n[{\n                    selecteId: 13,\n                    content: <TextInput style={styles.input} placeholder="请输入电话号码" />,\n                    disabled: false\n                },{\n                    selecteId: 14,\n                    content: "Banana",\n                    disabled: false\n                },\n                {\n                    selecteId: 15,\n                    content: "Orange",\n                    disabled: false\n                }]\n\n注意：content传值可以是字符串也可以是DOM，如果传入的是DOM结构样式自定义就行\n\n2、options属性包含以下参数 必填属性\nid:对应数组对象中唯一标识的名字id\nvalue：对象中具体的name或者传入的DOM\ndisabled：是否可以勾选\n<Radio\n                        dataOption={this.state.data}\n                        options={{\n                            id: "selecteId",\n                            value: "content",\n                            disabled: "disabled"\n                        }}\n                    />\n\n```\n# 自定义属性介绍\n属性：\n\n```\ninitStyle：自定义行内样式（包括背景颜色，行高等）无默认值\n\ntxtColor：定义单选按钮对应文字样式（默认值：#414141）\n\nactiveTxtColor：定义单选按钮选中时的文字样式 默认值：#ff552e\n\nnoneColor：定义disabled时的文案样式 默认值：#ACA899\n\n图片都有默认值，展示上图有\nseledImg：被选中时单选按钮图片链接\n\nselImg：默认的单选按钮图片链接\n\nselnoneImg：disabled时的单选按钮图片链接\n\nlabelStyle：定义按钮文字样式\n\nselectedValue：默认选中的单选按钮 如果不设置就是默认无选中值\n\nisPeer：布局方式 false一行一列的布局方式，true一行两列的布局方式，默认false\n```\n事件\n\n```\nonValueChange：点击选中时的传值\n接收两个参数，一个是按钮ID，一个是按钮name\nonValueChange={(id, item) => this.setState({ initId: id, initItem: item })}\n把选中的按钮set到父组件的state中，如果需要默认选中的按钮，还需要自己在state中指定一个初始选中的按钮\n```\n调用\n\n```\n<Radio\n                        dataOption={this.state.data}\n                        options={{\n                            id: "selecteId",\n                            value: "content",\n                            disabled: "disabled"\n                        }}\n                        onValueChange={(id, item) => this.setState({ initId: id, initItem: item })}\n                        selectedValue={this.state.initId}\n                        txtColor="#333"\n                        activeTxtColor="#000"\n                        innerStyle={styles.initStyle}\n                        labelStyle={styles.labelStyle}\n                        rowHeight={35}\n                        isPeer={true}\n                    />\n```\n\n\n\n',
+23 silly publish   readmeFilename: 'README.md',
+23 silly publish   gitHead: 'b6d6b6a39be27ec5d88933e5b56a96320b18ff12',
+23 silly publish   _id: 'rn-design@1.0.0',
+23 silly publish   _shasum: '5731b5eef7d05f8475d44acddf10a8447a13313e',
+23 silly publish   _from: '.' }
+24 info lifecycle rn-design@1.0.0~prepublishOnly: rn-design@1.0.0
+25 silly lifecycle rn-design@1.0.0~prepublishOnly: no script for prepublishOnly, continuing
+26 verbose getPublishConfig undefined
+27 silly mapToRegistry name rn-design
+28 silly mapToRegistry using default registry
+29 silly mapToRegistry registry http://ires.58corp.com/repository/npm/
+30 silly mapToRegistry data Result {
+30 silly mapToRegistry   raw: 'rn-design',
+30 silly mapToRegistry   scope: null,
+30 silly mapToRegistry   escapedName: 'rn-design',
+30 silly mapToRegistry   name: 'rn-design',
+30 silly mapToRegistry   rawSpec: '',
+30 silly mapToRegistry   spec: 'latest',
+30 silly mapToRegistry   type: 'tag' }
+31 silly mapToRegistry uri http://ires.58corp.com/repository/npm/rn-design
+32 verbose publish registryBase http://ires.58corp.com/repository/npm/
+33 silly publish uploading /Users/a58/.npm/rn-design/1.0.0/package.tgz
+34 verbose stack Error: auth required for publishing
+34 verbose stack     at CachingRegistryClient.publish (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
+34 verbose stack     at /Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/lib/publish.js:137:14
+34 verbose stack     at mapToRegistry (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/lib/utils/map-to-registry.js:62:3)
+34 verbose stack     at publish_ (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/lib/publish.js:108:3)
+34 verbose stack     at Array.<anonymous> (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+34 verbose stack     at LOOP (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+34 verbose stack     at /Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+34 verbose stack     at done (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/lib/utils/lifecycle.js:132:5)
+34 verbose stack     at LOOP (/Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:7:26)
+34 verbose stack     at /Users/a58/.nvm/versions/node/v7.6.0/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+35 verbose cwd /Users/a58/Desktop/work/RNproject/rn-design
+36 error Darwin 17.6.0
+37 error argv "/Users/a58/.nvm/versions/node/v7.6.0/bin/node" "/Users/a58/.nvm/versions/node/v7.6.0/bin/npm" "publish" "--registry" "http://ires.58corp.com/repository/npm/"
+38 error node v7.6.0
+39 error npm  v4.1.2
+40 error code ENEEDAUTH
+41 error need auth auth required for publishing
+42 error need auth You need to authorize this machine using `npm adduser`
+43 verbose exit [ 1, true ]

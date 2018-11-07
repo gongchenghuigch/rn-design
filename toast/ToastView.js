@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     }
 });
 class ToastView extends Component {
-    static propTypes = {
-        time: PropTypes.number
-    };
+    // static propTypes = {
+    //     time: PropTypes.number
+    // };
 
     moveAnim = new Animated.Value(height / 12);
     opacityAnim = new Animated.Value(0);

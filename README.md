@@ -1,3 +1,19 @@
+# 新项目
+克隆完种子工程之后需要
+```
+//下载依赖包
+$ npm install && git submodule init && git submodule update
+```
+此时项目中会有两个中间层
+
+- rn-app:中间协议层，封装的都是和native交互的中间协议层
+- rn-design：自定义RN组件，为了代码解耦就没有放在中间层rn-app中
+  
+
+这两个中间层都是和你的项目开发目录是平级的
+  
+关于组件的具体使用方法 [详见开发文档](http://c.58corp.com/pages/viewpage.action?pageId=20775138)
+
 
 由于RN官网并没有提供Radio单选组件，所以需要自己封装通用的单选组件
 

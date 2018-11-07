@@ -1,0 +1,1 @@
+引入此组件 需要npm install --save prop-types
